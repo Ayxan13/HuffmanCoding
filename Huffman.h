@@ -37,7 +37,7 @@ struct Encoded {
 
   // Root element is always the last one.
   // There is _always_ at least 1 element.
-  [[nodiscard]] auto const& root() const {
+  [[nodiscard]] auto const &root() const {
 	return nodes_.back();
   }
   [[nodiscard]] auto root_index() const {
@@ -48,7 +48,7 @@ struct Encoded {
   Encoded() = default;
 
   static Encoded encode(std::span<std::uint8_t const> input_data);
-  static Encoded encode(void const* source, std::size_t size);
+  static Encoded encode(void const *source, std::size_t size);
   static Encoded encode(std::span<std::byte const> input_data);
   static Encoded encode(std::string_view input_data);
 

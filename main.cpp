@@ -27,8 +27,7 @@ int main() {
 
   if (str == decoded) {
 	std::cout << "Test Passed\n";
-  }
-  else {
+  } else {
 	std::cout << "Test Failed\n";
   }
 }
