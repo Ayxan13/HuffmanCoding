@@ -126,9 +126,9 @@ void Encoded::init_tree(std::span<std::uint8_t const> const input_data) {
 	queue.pop();
 	auto back2 = queue.top();
 	queue.pop();
-	nodes_with_size.emplace_back(
-		Node{back1, back2, 0},
-		nodes_with_size[back1].count + nodes_with_size[back2].count);
+	nodes_with_size.push_back(
+		NodeWithCount{Node{back1, back2, 0},
+					  nodes_with_size[back1].count + nodes_with_size[back2].count});
 	queue.push(static_cast<int16_t>(nodes_with_size.size() - 1));
   }
 
