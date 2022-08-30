@@ -44,9 +44,9 @@ struct Encoded {
 	return static_cast<int16_t>(nodes_.size() - 1);
   }
 
- public:
-  Encoded() = default;
+ Encoded() = default;
 
+ public:
   static Encoded encode(std::span<std::uint8_t const> input_data);
   static Encoded encode(void const *source, std::size_t size);
   static Encoded encode(std::span<std::byte const> input_data);
@@ -54,8 +54,6 @@ struct Encoded {
 
   [[nodiscard]] std::string decode() const;
 };
-
-static_assert(CHAR_BIT == 8, "8 bit byte is assumed");
 }  // namespace Huffman
 
 #endif  // HUFFMAN_H
